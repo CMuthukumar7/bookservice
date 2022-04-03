@@ -98,7 +98,9 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public BigDecimal retrievePriceById(Long id) {
-		
+		bookRepository.findById(id);
+		bookRepository.findAll();
+		bookRepository.count();
 		bookRepository.retrieveBookById(id);
 		bookRepository.updateBookPrice(new BigDecimal(10), id);
 		bookRepository.deleteBookById(id);
